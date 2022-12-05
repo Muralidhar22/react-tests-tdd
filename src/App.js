@@ -1,21 +1,20 @@
 import './App.css';
+import StarbucksInput from './components/starbucks-input';
+import { useState } from "react";
 
 function App() {
+  const [value, setValue] = useState("Ank")
+  const onChangeHandler = (newValue) => {
+    setValue(newValue)
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <StarbucksInput
+        name='nickname'
+        value={value}
+        onChange={onChangeHandler}
+        />
     </div>
   );
 }
